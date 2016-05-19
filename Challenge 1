@@ -1,0 +1,31 @@
+public class Anagram {
+
+    public static boolean isAnagram(String word1, String word2){
+
+        // remove specials empty spaces and characters
+        word1 = word1.replaceAll("[^a-zA-Z]+", "");
+        word2 = word2.replaceAll("[^a-zA-Z]+", "");
+
+//        In case a number is required in the string
+//        word1 = word1.replaceAll("[^a-zA-Z0-9]+", "");
+//        word2 = word2.replaceAll("[^a-zA-Z0-9]+", "");
+
+        System.out.println("word1 without spacing: " + word1);
+        System.out.println("word2 without spacing: " + word2);
+
+        int wordLength1 = word1.length();
+        int wordLength2 = word2.length();
+
+        return wordLength1 == wordLength2;
+    }
+
+// Checking if the letters are anagrams of each other, if they are, they will print true if not false
+    public static void main(String[] args) {
+        System.out.println(isAnagram("he l l o?", " he l l a "));
+        System.out.println(isAnagram("Punishment", "Nine Thumps"));
+        System.out.println(isAnagram("The Morse code", "Here come dots"));
+        System.out.println(isAnagram("Snooze alarms", "Alas! No more Zs"));
+        System.out.println(isAnagram("Halley's Comet", "yet come"));
+        System.out.println(isAnagram("One good turn deserves another.", "Do rogues endorse that? No, never!"));
+    }
+}
